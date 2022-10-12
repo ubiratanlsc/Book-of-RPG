@@ -8,12 +8,12 @@ interface ResistenciaProps {
 
 export function Resistencias(props: ResistenciaProps) {
      return (
-          <div>
+          <div className="resistencias-div glassblack">
                <p className="">{props.titulo}</p>
                <p className="">{props.total}</p>
                <p className="">{props.meio}</p>
                <p className="">{props.modificador}</p>
-               <p className="">{props.outros}</p>
+               <p className="resist-last">{props.outros}</p>
           </div>
      )
 }

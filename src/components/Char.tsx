@@ -12,7 +12,6 @@ import { HabilidadesClasse } from './ficha/habilidadesClasse/HabilidadesClasse'
 import { Armaduras } from './ficha/armadura/Armaduras'
 import { Magias } from './ficha/magias/Magias'
 import { Pericias } from './ficha/pericias/Pericias'
-import { Container, Grid } from '@mantine/core'
 interface charsProps {
   id: string,
   nome: string,
@@ -71,42 +70,22 @@ export function Char(props: charsProps) {
 
 
   return (
-
-    <Container>
+    <>
       <div>
         <header>
-
           <h1 className="names">{chars.nome}</h1>
         </header>
         <section>
           <div className='tudo'>
             <section className="info glass">
-            <Grid grow gutter="xl">
-              <Grid.Col span={1}>
-                <Info titulo="Raça" valor={chars.raca} />
-              </Grid.Col>
-              <Grid.Col span={1}>
-                <Info titulo="Classe" valor={chars.classe} />
-              </Grid.Col>
-              <Grid.Col span={1}>
-                <Info titulo="Tendencia" valor={chars.tendencia} />
-              </Grid.Col>
-              <Grid.Col span={1}>
-                <Info titulo="Idade" valor={chars.idade} />
-              </Grid.Col>
-              <Grid.Col span={1}>
-                <Info titulo="Divindade" valor={chars.divindade} />
-              </Grid.Col>
-              <Grid.Col span={1}>
-                <Info titulo="Deslocamento" valor={chars.deslocamento} />
-              </Grid.Col>
-              <Grid.Col span={1}>
-                <Info titulo="Tamanho" valor={chars.tamanho} />
-              </Grid.Col>
-              <Grid.Col span={1}>
-                <Info titulo="Nivel" valor={chars.nivel} />
-              </Grid.Col>
-            </Grid>
+              <Info titulo="Raça" valor={chars.nome} />
+              <Info titulo="Classe" valor={chars.classe} />
+              <Info titulo="Tendencia" valor={chars.tendencia} />
+              <Info titulo="Tamanho" valor={chars.tamanho} />
+              <Info titulo="Idade" valor={chars.idade} />
+              <Info titulo="Divindade" valor={chars.divindade} />
+              <Info titulo="Deslocamento" valor={chars.deslocamento} />
+              <Info titulo="Nível" valor={chars.nivel} />
             </section>
             <section className="pontos glass">
               <Pontos titulo="Pontos de Vida" valor={chars.pontosVida} />
@@ -131,7 +110,7 @@ export function Char(props: charsProps) {
               <Habilidades tituloHab={"Carisma"} valor={chars.carisma} modificador={modificador(chars.carisma)} />
             </div>
             <section className="resistencias glass">
-              <div className="resistenciasTitulo">
+              <div className="resistenciasTitulo glassblack">
                 <p className=""></p>
                 <p className=" titulos">Total</p>
                 <p className=" titulos">&frac12; Nv</p>
@@ -186,7 +165,6 @@ export function Char(props: charsProps) {
                   <Magias key={index} magia={itens.talento || itens.magia} />)}
               </div>
             </section>
-
             <section className="periciasSection glass">
 
               <div className="pericias">
@@ -197,13 +175,17 @@ export function Char(props: charsProps) {
                     booleano={itens.boolean} />
 
                 )}
-
               </div>
             </section>
           </div>
         </section>
+
+
+
+
+
       </div>
-    </Container>
+    </>
   )
 }
 

@@ -6,11 +6,9 @@ interface InfoProps {
 }
 export function Info(props: InfoProps) {
      return (
-          <>
-               <Text align="center" weight={700} size="lg">{props.titulo}</Text>
-               <Space h={0} />
-               <Input className="txt" variant="unstyled" placeholder={props.titulo} value={props.valor}
-               />
-          </>
+          <div className="infodiv glassblack">
+               <div className="p">{props.titulo}</div>
+               <div className="p">{props.valor}</div>
+          </div>
      )
 }
