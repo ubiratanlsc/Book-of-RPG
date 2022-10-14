@@ -1,4 +1,4 @@
-import { Input, Space, Text } from "@mantine/core";
+import { Input, Space, Text, TextInput } from "@mantine/core";
 
 interface InfoProps {
      titulo: string;
@@ -8,7 +8,12 @@ export function Info(props: InfoProps) {
      return (
           <div className="infodiv glassblack">
                <div className="p">{props.titulo}</div>
-               <div className="p">{props.valor}</div>
+               <TextInput
+                    placeholder={props.titulo}
+                    withAsterisk
+                    variant="unstyled"
+                    value={props.valor}
+               />
           </div>
      )
 }

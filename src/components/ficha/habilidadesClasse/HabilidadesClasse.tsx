@@ -1,3 +1,4 @@
+import React from 'react'
 interface HabilidadesProps {
      habilidades: string,
      // descrição?: string

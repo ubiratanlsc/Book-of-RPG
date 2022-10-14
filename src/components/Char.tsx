@@ -1,3 +1,4 @@
+import React from 'react'
 import { useEffect, useState } from 'react'
 import Api from '../services/api'
 import '../assets/css/style.css'
@@ -89,55 +90,63 @@ export function Char(props: charsProps) {
             </section>
             <section className="pontos glass">
               <Pontos titulo="Pontos de Vida" valor={chars.pontosVida} />
-              <Pontos titulo="Pontos de Mana" valor={chars.pontosMagia} />
-              <Pontos titulo="Redução de Dano" valor={chars.reducaoDano} />
-              <Pontos titulo="Pontos de Mana" valor={chars.pontosVida} />
-              <Pontos titulo="Pontos de Mana" valor={chars.pontosVida} />
-              <Pontos titulo="Pontos de Mana" valor={chars.pontosVida} />
+              <Pontos titulo="PV Atuais" valor={chars.pontosMagia} />
+              <Pontos titulo="Ponto de Ação" valor={chars.reducaoDano} />
+              <Pontos titulo="Mana" valor={chars.pontosMagia} />
+              <Pontos titulo="RD" valor={chars.reducaoDano} />
+              <Pontos titulo="Resistencia a Energia" valor={0} />
             </section>
-            <div className="habilidades glass">
-              <p className="">Habilidades</p>
-              <div className="habsLegenda flex">
-                <p className="habLegenda titulos">Habilidade</p>
-                <p className="valorLegenda titulos">Valor</p>
-                <p className="ModHabLegenda titulos">Mod. Hab</p>
-              </div>
-              <Habilidades tituloHab={"Força"} valor={chars.forca} modificador={modificador(chars.forca)} />
-              <Habilidades tituloHab={"Destreza"} valor={chars.destreza} modificador={modificador(chars.destreza)} />
-              <Habilidades tituloHab={"Constituição"} valor={chars.constituicao} modificador={modificador(chars.constituicao)} />
-              <Habilidades tituloHab={"Sabedoria"} valor={chars.sabedoria} modificador={modificador(chars.sabedoria)} />
-              <Habilidades tituloHab={"Inteligencia"} valor={chars.inteligencia} modificador={modificador(chars.inteligencia)} />
-              <Habilidades tituloHab={"Carisma"} valor={chars.carisma} modificador={modificador(chars.carisma)} />
-            </div>
+
             <section className="resistencias glass">
-              <div className="resistenciasTitulo glassblack">
-                <p className=""></p>
-                <p className=" titulos">Total</p>
-                <p className=" titulos">&frac12; Nv</p>
-                <p className=" titulos">Hab</p>
-                <p className=" titulos">Outros</p>
-              </div>
-              <Resistencias titulo="Fortitude" total={resistencia(chars.nivel, modificador(chars.constituicao), chars.fortitude)} meio={meionv(chars.nivel)} modificador={modificador(chars.constituicao)} outros={chars.fortitude} />
-              <Resistencias titulo="Reflexo" total={resistencia(chars.nivel, modificador(chars.destreza), chars.reflexo)} meio={meionv(chars.nivel)} modificador={modificador(chars.destreza)} outros={chars.reflexo} />
-              <Resistencias titulo="Vontade" total={resistencia(chars.nivel, modificador(chars.sabedoria), chars.vontade)} meio={meionv(chars.nivel)} modificador={modificador(chars.sabedoria)} outros={chars.vontade} />
 
             </section>
             <section className="ca glass">
+
+              <div className="habilidades flex">
+                <p className="dex glassblack">Habilidades</p>
+                <div className="habsLegenda flex glassblack">
+                  <p className="habLegenda titulos">Habilidade</p>
+                  <p className="valorLegenda titulos">Valor</p>
+                  <p className="ModHabLegenda titulos">Mod. Hab</p>
+                </div>
+                <Habilidades tituloHab={"Força"} valor={chars.forca} modificador={modificador(chars.forca)} />
+                <Habilidades tituloHab={"Destreza"} valor={chars.destreza} modificador={modificador(chars.destreza)} />
+                <Habilidades tituloHab={"Constituição"} valor={chars.constituicao} modificador={modificador(chars.constituicao)} />
+                <Habilidades tituloHab={"Sabedoria"} valor={chars.sabedoria} modificador={modificador(chars.sabedoria)} />
+                <Habilidades tituloHab={"Inteligencia"} valor={chars.inteligencia} modificador={modificador(chars.inteligencia)} />
+                <Habilidades tituloHab={"Carisma"} valor={chars.carisma} modificador={modificador(chars.carisma)} />
+              </div>
               <ClasseArmadura total={5} meio={5} destreza={5} bonusArmadura={5} bonusEscudo={5} tamanho={5} outros={5} />
+              <div className="resistenciass">
+                <div className="resistenciasTitulo glassblack">
+                  <p className=""></p>
+                  <p className=" titulos">Total</p>
+                  <p className=" titulos">&frac12; Nv</p>
+                  <p className=" titulos">Hab</p>
+                  <p className=" titulos">Outros</p>
+                </div>
+                <Resistencias titulo="Fortitude" total={resistencia(chars.nivel, modificador(chars.constituicao), chars.fortitude)} meio={meionv(chars.nivel)} modificador={modificador(chars.constituicao)} outros={chars.fortitude} />
+                <Resistencias titulo="Reflexo" total={resistencia(chars.nivel, modificador(chars.destreza), chars.reflexo)} meio={meionv(chars.nivel)} modificador={modificador(chars.destreza)} outros={chars.reflexo} />
+                <Resistencias titulo="Vontade" total={resistencia(chars.nivel, modificador(chars.sabedoria), chars.vontade)} meio={meionv(chars.nivel)} modificador={modificador(chars.sabedoria)} outros={chars.vontade} />
+
+              </div>
+
             </section>
             <section className="ataque glass">
-              <p className="tipoAtaque titulos">Corpo a Corpo</p>
-              <div className="atqlegendas">
-                <p className="valorAt">Arma</p>
-                <p className="valorAt">Total</p>
-                <p className="valorAt">BBA</p>
-                <p className="valorAt">Modificador</p>
-                <p className="valorAt">Mod. Taman</p>
-                <p className="valorAt">Outros</p>
+              <div className="ataque-1">
+                <div className="glassblack">Corpo a Corpo</div>
+                <div className="ataque-2 glassblack">
+                  <div className="valorAt">Arma</div>
+                  <div className="valorAt">Total</div>
+                  <div className="valorAt">BBA</div>
+                  <div className="valorAt">Modificador</div>
+                  <div className="valorAt">Mod. Taman</div>
+                  <div className="valorAt">Outros</div>
+                </div>
+                <Ataque arma="Espada longa" total={10} bba={5} modificador={4} tamanho={0} outros={0} />
+                <Ataque arma="Espada longa" total={10} bba={5} modificador={4} tamanho={0} outros={0} />
+                <Ataque arma="Espada longa" total={10} bba={5} modificador={4} tamanho={0} outros={0} />
               </div>
-              <Ataque arma="Espada longa" total={10} bba={5} modificador={4} tamanho={0} outros={0} />
-              <Ataque arma="Espada longa" total={10} bba={5} modificador={4} tamanho={0} outros={0} />
-              <Ataque arma="Espada longa" total={10} bba={5} modificador={4} tamanho={0} outros={0} />
             </section>
             <section className="armor glass">
               <p className=" titulos">Armadura e Escudos</p>
@@ -179,11 +188,6 @@ export function Char(props: charsProps) {
             </section>
           </div>
         </section>
-
-
-
-
-
       </div>
     </>
   )

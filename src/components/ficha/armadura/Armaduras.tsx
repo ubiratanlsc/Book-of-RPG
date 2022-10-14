@@ -1,3 +1,4 @@
+import React from 'react'
 interface ArmaduraProps {
      armadura: string;
      bonusCA: number;

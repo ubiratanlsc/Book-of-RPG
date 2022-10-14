@@ -11,7 +11,7 @@ body{
 }
 .glass{
  background: rgba(255, 255, 255, 0.2);
- border-radius: 7px;
+ border-radius: 16px;
  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
  backdrop-filter: blur(8.6px);
  -webkit-backdrop-filter: blur(8.6px);
@@ -21,7 +21,7 @@ body{
 .glassblack {
 /* From https://css.glass */
 background: rgba(0, 0, 0, 0.78);
-border-radius: 16px;
+border-radius: 7px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(5.3px);
 -webkit-backdrop-filter: blur(5.3px);
@@ -40,18 +40,21 @@ header h1{
   grid-template-columns: 25% 25% 50%;
   grid-template-areas:
     "info info info"
-    "resistencias pontos pontos "
-    "ca ca habilidades"
+    "pontos pontos pontos "
+    "ca ca ca"
     "ataque ataque armor"
     "habilidadesClasse habilidadesClasse habilidadesClasse"
     "magiasTalentos magiasTalentos magiasTalentos"
     "periciasSection periciasSection periciasSection"
           ;
 }
+.tudo input{
+  text-align:center;
+  font-size:1em;
+}
 /*********************************************************/
 .info{
   grid-area: info;
-  width:100%;
   display: flex;
   justify-content: space-between;
 
@@ -62,9 +65,9 @@ header h1{
 }
 .infodiv {
   margin-top:0.5em;
-  margin-bottom:0.7em;
-  margin-left:0.5em;
-  margin-right:0.5em;
+  margin-bottom:0.5em;
+  margin-left:0.3em;
+  margin-right:0.3em;
   border-radius:7px;
 }
 .p{
@@ -77,10 +80,6 @@ header h1{
 .pontos{
   grid-area: pontos;
   display: flex;
-  //width:100%;
-  /* justify-content: center; */
-  //column-count: 2;
-  //background-color: red;
   justify-content:space-between;
 }
 .pontos {
@@ -92,15 +91,14 @@ header h1{
   border-radius:7px;
   margin-left:0.5em;
   margin-right:0.5em;
-  height:3.5em;
+  height:3.8em;
   width:13em;
 }
 
 /*********************************************************/
 .habilidades{
+  margin-left:0.5em;
   grid-area: habilidades;
-  width:100%;
-  height:100%;
   flex-flow: column nowrap;
   display: flex;
   color:white;
@@ -115,26 +113,33 @@ header h1{
   width:8em;
   text-align:left;
   margin: 0.2em 1em;
+  
 }
+
+.habsLegenda, .dex, .habGeral{
+  width:34em;
+  margin-bottom: 0.2em;
+} 
 .valorLegenda, .ModHabLegenda, .valorAtri, .ModHab{
   text-align: center;
 }
 .ca{
   grid-area: ca;
-  width:100%;
-  height:100%;
-  justify-content: center;
+  display: flex;
+  align-items: flex-start;
+}
+.Classe{
+  margin-left:1.5em;
 }
 .classeArmadura{
-  display:flex;
   margin-top:1em;
   text-align:center;
-  justify-content: center;
+  width: 15em;
+  margin-bottom: 0.3em;
 }
 .atributosCA{
   display: flex;
   flex-direction: column;
-  align-items: center;
 
 }
 .atributosCA div {
@@ -142,6 +147,9 @@ header h1{
   width: 15em;
   justify-content: space-between;
   margin-bottom: 0.3em;
+}
+.atributosCA p {
+  margin: 0.2em 1em;
 }
 .CaLegenda{
   margin: 0 0.25em;
@@ -152,31 +160,28 @@ header h1{
 /*******************************************************************/
 .resistencias{
   grid-area: resistencias;
-  width:100%;
-  height: 100%;
   display:flex;
   flex-direction: column;
 }
 .resistenciasTitulo{
-  margin-top:0.5em;
+  margin-top:1em;
 }
-.resistencias div {
+.resistenciass div {
   display: flex;
   flex-direction: row;
   justify-content: center;
   border-radius:7px;
-  margin-left:0.5em;
-  margin-right:0.5em;
+  margin-left:1.5em;
 }
 .resistencias-div{
   
   margin-top:0.4em;
   border-radius:7px;
   margin-left:0.5em;
-  margin-right:0.5em;
 }
-.resistencias p {
+.resistenciass p {
   margin: 0em;
+  margin-left:1em;
   text-align:center;
   width:3.9em;
 }
@@ -189,31 +194,21 @@ header h1{
   grid-area: ataque;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-bottom: 10px red;
-  }
-.ataque div{
+  justify-content: flex-start;
+  text-align: center;
+}
+.ataque-1{
+  margin: 0.5em 1em;
+}
+.ataque-2{
   display: flex;
-  flex-direction: row;
-  align-items: center;
-
-}
-.ataque p{
-  margin-top: 0.2em;
-  text-align:center;
-  margin-left: 0.5em;
-}
-.valorAt{
-  width: 5.5em;
-}
-.tipoAtaque{
-  width: 6em;
-}
-.atqlegendas{
+  flex-direction:row;
+  justify-content: space-between;
   margin-top: 0.5em;
 }
-.last{
-  margin-bottom: 0.8em;
+.ataque-2 div {
+  width: 7em;
+  text-align: center;
 }
 /**********************************************************/
 .ataqueAd{

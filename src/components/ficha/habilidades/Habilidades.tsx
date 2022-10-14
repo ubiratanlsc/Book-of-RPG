@@ -1,5 +1,6 @@
+import React from 'react';
 interface HabilidadesProps {
-     tituloHab: any ,
+     tituloHab: any,
      valor: number,
      modificador: number,
 }
